@@ -1,0 +1,78 @@
+1. SELECT AVG(COUNT)
+from(SELECT shippedDate,COUNT(*) 
+FROM orders 
+GROUP BY shippedDate) as count;
+
+2.SELECT AVG(COUNT)
+from(SELECT orderDate,COUNT(*) 
+FROM orders 
+GROUP BY orderDate) as count;
+
+3.SELECT ProductName ,MIN(MSRP) 
+FROM Products; 
+
+4.SELECT ProductName ,MAX(quantityinStock) 
+FROM Products; 
+
+5.
+SELECT SINGLE p.'productName' COUNT(DISTINCT o.'orderNumber)
+  FROM 'orderDetails' as o
+  INNER JOIN 'products' as p
+  on o.'productCode' = p.'productCode'
+  GROUP BY o.'productCode';
+
+6.SELECT 'customerName', MAX(AMOUNT) 
+	FROM ( SELECT c.'customerName', p.'customerNumber' SUM(p.'amount') as AMOUNT 
+	       FROM 'payments' as p
+		  INNER JOIN 'customers' as c
+		    ON p.'customerNumber' = c.'customerNumber' 
+			GROUP BY p.'customerNumber');
+
+7. SELECT customerNumber,customerName 
+	FROM customers 
+	WHERE city = 'Melbourne';
+
+8.SELECT CustomerName FROM Customers
+WHERE CustomerName like "N%";
+
+9. 
+SELECT CustomerName FROM Customers
+WHERE phone like "7%" and city ='Las Vegas';
+
+10.
+SELECT CustomerName FROM Customers
+WHERE  creditLimit < 1000 and ( city = 'Las Vegas' OR city = 'Nantes' OR city = 'Stavern');
+
+11.
+
+SELECT orderNumber FROM orderdetails WHERE quantityOrdered < 10;
+
+
+12.
+
+SELECT orderNumber 
+	FROM orders 
+	   WHERE customerNumber IN ( 
+		SELECT customerNumber 
+		   FROM customers 
+			WHERE customerName LIKE "N%");
+
+13.
+
+SELECT customerName  
+	FROM  customers 
+	WHERE customerNumber IN ( SELECT customerNumber FROM orders WHERE status = 'Disputed' );
+
+14.
+
+SELECT customerName 
+	FROM customers 
+	WHERE customerNumber IN (	
+		SELECT customerNumber 
+		FROM payments 
+		WHERE checkNumber LIKE "H%" 
+		AND paymentDate = '2004-10-19' );
+
+15.
+
+SELECT checkNumber FROM payments WHERE amount > 1000;

@@ -1,0 +1,55 @@
+Q1  :-D
+
+Q2  :-B
+
+Q3  :-C
+
+Q4  :-A
+
+Q5  :-B
+
+Q6  :-A
+
+Q7  :-D
+
+Q8  :-C
+
+Q9  :-A,C,D
+
+Q10 :-D
+
+Q11 :-What are convex, non-convex optimization?
+
+A convex optimization problem maintains the properties of a linear programming problem and a non convex problem the properties
+of a non linear programming problem.The basic difference between the two categories is that are:-
+ a) convex optimization there can be only one optimal solution, which is globally optimal or you might prove that there
+ is no feasible solution to the problem, while in
+ b) nonconvex optimization may have multiple locally optimal points and it can take a lot of time to identify whether 
+ the problem has no solution or if the solution is global. 
+
+
+Q12. What do you mean by saddle point? Answer briefly.
+
+A saddle point is a flat low area with further lower points, a point at which a fuction of two variables has
+partial derivatives equal to zero but at which the function has neither a maximum or a minimum value.it is just 
+a flat surface.Or you can say its a point in the range of a smooth function every neighborhood of which contains points 
+on each side of its tangent plane.
+
+Q13. What is the main difference between classical momentum and Nesterov momentum? Explain briefly.
+
+The main difference is in classical momentum you first correct your velocity and then make a big step according to that
+velocity (and then repeat), but in Nesterov momentum you first making a step into velocity direction and then make a 
+correction to a velocity vector based on new location (then repeat).
+
+Q14. What is Pre initialisation of weights? Explain briefly.
+
+Weight initialization comprises setting up the weights vector for all neurons for the first time, just before the
+neural network training process starts. As you can see, indeed, it is highly important to neural network success: 
+without weights, the forward pass cannot happen, and so cannot the training process.
+
+
+Q15. What is Pre initialisation of weights? Explain briefly.
+
+We define Internal Covariate Shift as the change in the distribution of network activations due to the change in network
+parameters during training. In neural networks, the output of the first layer feeds into the second layer, the output of 
+the second layer feeds into the third, and so on.
